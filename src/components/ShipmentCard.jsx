@@ -5,7 +5,7 @@ import { db } from "../firebase";
 import { useAuth } from "../context/AuthContext";
 import { useNotification } from "../context/NotificationContext";
 
-const STATUS_OPTIONS = ["Dispatched", "In Transit", "Delivered"];
+const STATUS_OPTIONS = ["Dispatched", "In Transit", "Delivered", "Returned", "Cancelled"];
 
 export default function ShipmentCard({ shipment }) {
   const { currentUser } = useAuth();
@@ -77,6 +77,12 @@ export default function ShipmentCard({ shipment }) {
           {shipment.weight !== undefined && (
             <Typography variant="body2" color="text.secondary" mt={1}>Weight: {shipment.weight}g</Typography>
           )}
+          {shipment.packageSize && (
+            <Typography variant="body2" color="text.secondary" mt={1}>Package Size: {shipment.packageSize}</Typography>
+          )}
+          {shipment.deliveryAddress && (
+            <Typography variant="body2" color="text.secondary" mt={1}>Delivery Address: {shipment.deliveryAddress}</Typography>
+          )}
           <Box mt={1} display="flex" alignItems="center" gap={2}>
             <Chip label={shipment.status} color={shipment.status === "Delivered" ? "success" : "primary"} sx={{ fontWeight: 600, fontSize: 15, px: 1.5 }} />
             {shipment.createdAt && (
@@ -110,7 +116,7 @@ export default function ShipmentCard({ shipment }) {
                 onChange={e => setNewStatus(e.target.value)}
                 sx={{ minWidth: 140 }}
               >
-                {nextStatuses.map(status => (
+                {STATUS_OPTIONS.filter(status => status !== shipment.status).map(status => (
                   <MenuItem value={status} key={status}>{status}</MenuItem>
                 ))}
               </Select>

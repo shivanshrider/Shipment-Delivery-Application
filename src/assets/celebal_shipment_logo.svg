@@ -1,0 +1,27 @@
+
+<svg width="250" height="200" viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="white"/>
+
+  <!-- Truck Body -->
+  <rect x="100" y="100" width="250" height="100" rx="10" fill="#002f6c"/>
+
+  <!-- Arrow -->
+  <polygon points="190,125 240,125 240,110 275,150 240,190 240,175 190,175" fill="#e30613"/>
+
+  <!-- Windows -->
+  <polygon points="320,100 370,100 390,130 390,170 320,170" fill="#002f6c"/>
+  <polygon points="330,110 360,110 375,135 375,160 330,160" fill="white"/>
+
+  <!-- Wheels -->
+  <circle cx="140" cy="210" r="20" fill="#002f6c"/>
+  <circle cx="300" cy="210" r="20" fill="#002f6c"/>
+
+  <!-- Speed lines -->
+  <line x1="70" y1="120" x2="100" y2="120" stroke="#002f6c" stroke-width="10"/>
+  <line x1="70" y1="145" x2="100" y2="145" stroke="#002f6c" stroke-width="10"/>
+  <line x1="70" y1="170" x2="100" y2="170" stroke="#002f6c" stroke-width="10"/>
+
+  <!-- Text -->
+  <text x="125" y="280" font-family="Arial, sans-serif" font-size="36" fill="#002f6c" font-weight="bold">Celebal</text>
+  <text x="125" y="320" font-family="Arial, sans-serif" font-size="36" fill="#002f6c" font-weight="bold">Shipment</text>
+</svg>
