@@ -11,6 +11,7 @@ import YourShipments from './pages/YourShipments';
 import AdminPanel from './pages/AdminPanel';
 import AgentPanel from './pages/AgentPanel';
 import AddressBook from './pages/AddressBook';
+import Footer from "./components/Footer";
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import theme from './theme';
 
@@ -59,6 +60,7 @@ export default function App() {
           <Router>
             <Navbar />
             <AppRoutes />
+            <Footer />
           </Router>
         </AuthProvider>
       </NotificationProvider>
